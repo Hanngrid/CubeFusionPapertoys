@@ -5,9 +5,9 @@ angular.module("myApp").controller("adminPapertoysController", function ($http, 
 
     var me = this;
 
-    //me.service = service;
+    me.service = service;
 
-    //me.imageRoute = me.service.routes.papertoyImages;
+    me.imageRoute = me.service.routes.paperImages;
 
     me.currentView = 'view/adminComponents/adminPapertoys/listPapertoys.html';
     me.currentPaper = null;

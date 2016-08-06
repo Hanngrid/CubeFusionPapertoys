@@ -20,7 +20,8 @@ if ($conn->connect_error) {
 $sql = "
   SELECT
     p.*,
-    a.name as animeName
+    a.name as animeName,
+    a.imageName as animeImage
   FROM
     papertoy p,
     anime a

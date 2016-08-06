@@ -20,6 +20,9 @@
             <th class="ordenableTh">
                 Fecha Nacimiento
             </th>
+            <th class="ordenableTh">
+                Rol
+            </th>
             
             <th></th>
         </tr>
@@ -31,6 +34,7 @@
             <td>{{user.lastName}}</td>
             <td>{{user.email}}</td>
             <td>{{user.birthDate | date : 'dd/MM/yyyy'}}</td>
+            <td>{{user.role}}</td>
             <td>
                 <button class="fa fa-eye" ng-click="adUs.openReadPanel(user)"></button>
                 <button class="fa fa-pencil" ng-click="adUs.openUpdatePanel(user)"></button>

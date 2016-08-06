@@ -3,6 +3,18 @@
 angular.module("myApp",['ngRoute','autocomplete']);
 
 
+angular.module("myApp").directive('errSrc', function() {
+    return {
+        link: function(scope, element, attrs) {
+            element.bind('error', function() {
+                if (attrs.src != attrs.errSrc) {
+                    attrs.$set('src', attrs.errSrc);
+                }
+            });
+        }
+    }
+});
+
 angular.module("myApp").config(function($routeProvider) {
 
     $routeProvider
@@ -32,15 +44,15 @@ angular.module("myApp").config(function($routeProvider) {
 });
 
 angular.module("myApp").controller('aboutController', function($scope) {
-    $scope.message = 'Esta es la p�gina "Acerca de"';
+    $scope.message = 'Esta es la página "Acerca de"';
 });
 
 angular.module("myApp").controller('contactController', function($scope) {
-    $scope.message = 'Esta es la p�gina de "Contacto", aqu� podemos poner un formulario';
+    $scope.message = 'Esta es la página de "Contacto", aquí podemos poner un formulario';
 });
 
 angular.module("myApp").controller('mainController', function($scope) {
-    $scope.message = 'Esta es la p�gina de "Inicio"';
+    $scope.message = 'Esta es la página de "Inicio"';
 });
 
 
@@ -65,13 +77,14 @@ angular.module("myApp").factory("service", function(){
     ret.name = "";
     ret.password = "";
 
-    ret.routes = {
-        animeImages: "/cubefusion/CubeFusionPapertoysWeb/images/animes/"
-    };
+    ret.route = "/Proyectos/CubeFusionPapertoys/images/";
+    //ret.route = "/images/";
 
-    //ret.routes = {
-    //    animeImages: "/images/animes/"
-    //};
+    ret.routes = {
+        animeImages: ret.route + "animes/",
+        paperImages: ret.route + "papertoys/",
+        modelImages: ret.route + "models/"
+    };
 
     return ret;
 });

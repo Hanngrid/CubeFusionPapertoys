@@ -10,6 +10,7 @@ angular.module("myApp")
         an.service = service;
 
         an.imageRoute = an.service.routes.animeImages;
+        an.paperRoute = an.service.routes.paperImages;
 
         an.mode = 'anime';
 
@@ -59,10 +60,10 @@ angular.module("myApp")
             an.letterPre = an.letter;
 
             $http.post(
-                "http://cubefusionpapertoys.com/database/papertoys/getPapersByAnime.php",
+                "http://cubefusionpapertoys.com/database/papertoys/getAllPapersByAnime.php",
                 {
-                    idAnime: a.id
-                    },
+                    idAnime: Number(a.id)
+                },
                 config
             ).success(function(response){
                 an.papertoyList = response.papertoys;

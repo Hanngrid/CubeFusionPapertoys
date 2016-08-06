@@ -16,10 +16,27 @@ if ($conn->connect_error) {
 }
 
 $sql = "
-  SELECT
-    *
-  FROM
-    user u
+    SELECT
+        u.id,
+        u.name,
+        u.lastName,
+        u.email,
+        u.age,
+        u.birthDate,
+        u.nickName,
+        u.password,
+        u.twitter,
+        u.facebook,
+        u.myAnimeList,
+        u.youtube,
+        u.avatar,
+        r.code as roleCode,
+        r.name as role
+    FROM
+        user u,
+        role r
+    WHERE
+        u.role = r.id
  ";
 
 $result = $conn->query($sql);

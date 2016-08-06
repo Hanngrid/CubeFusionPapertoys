@@ -5,12 +5,12 @@
         <div id="nombreFicha">{{an.calculatePaperName(p.name)}}</div>
         <div id="follas">
             {{p.parts}}
-            <img id="folla" src="/images/pageIcon.PNG"/>
+            <img id="folla" src="{{an.service.route}}/pageIcon.PNG"/>
         </div>
         <div id="estadoFicha">{{p.status}}</div>
     </div>
 
-    <img id="imagenFicha" src="{{p.image}}"/>
+    <img id="imagenFicha" src="{{an.paperRoute}}{{p.animeImage}}/{{p.image}}.jpg"/>
 
     <div id="botonera">
         <button ng-show="p.model">3D</button>
