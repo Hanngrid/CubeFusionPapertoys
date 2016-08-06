@@ -1,0 +1,41 @@
+<h1>Listado de Usuarios</h1>
+<button ng-click="adUs.openCreatePanel()">Nuevo</button>
+<br><br>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th class="ordenableTh">
+                Usuario
+            </th>
+            <th class="ordenableTh">
+                Nombre
+            </th>
+            <th class="ordenableTh">
+                Apellido
+            </th>
+            <th class="ordenableTh">
+                email
+            </th>
+            <th class="ordenableTh">
+                Fecha Nacimiento
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody ng-show="adUs.userList.length > 0">
+        <tr ng-repeat="user in adUs.userList">
+            <td>{{user.nickName}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.lastName}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.birthDate | date : 'dd/MM/yyyy'}}</td>
+            <td>
+                <button class="fa fa-eye" ng-click="adUs.openReadPanel(user)"></button>
+                <button class="fa fa-pencil" ng-click="adUs.openUpdatePanel(user)"></button>
+                <button class="fa fa-trash-o" ng-click="adUs.deleteUser(user)"></button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,18 @@
+<h1>{{adAn.title}}</h1>
+<form name="readCreateForm" novalidate id="crud">
+    <p ng-hide="adAn.mode=='CREATE'">
+        Id<br><input type="number" ng-model="adAn.currentAnime.id" readonly><br>
+    </p>
+    <p>
+        Nombre<br><input type="text" ng-model="adAn.currentAnime.name" ng-readonly="adAn.mode=='READ'"><br>
+    </p>
+    <p>
+        Imagen<br><input type="text" ng-model="adAn.currentAnime.imageName" ng-readonly="adAn.mode=='READ'"><br><br>
+        <img ng-show="adAn.currentAnime.imageName" src="{{adAn.imageRoute}}{{adAn.currentAnime.imageName}}.jpg"/>
+    </p>
+</form>
+<br>
+<button ng-click="adAn.save()" ng-hide="adAn.mode=='READ'">Guardar</button>
+<button ng-click="adAn.cancel()" ng-hide="adAn.mode=='READ'">Cancelar</button>
+<button ng-click="adAn.cancel()" ng-show="adAn.mode=='READ'">Volver</button>
+

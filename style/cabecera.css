@@ -1,0 +1,22 @@
+#cabecera{
+    border: 1px solid;
+}
+
+#cabecera ul{
+    padding: 0px;
+    margin: 0px;
+}
+
+#cabecera li{
+    list-style: none;
+    display: inline-block;
+    text-align: center;
+}
+#cabecera li:hover{
+    background-color: #888888;
+}
+
+#cabecera a{
+    margin: 20px;
+    text-decoration: none;
+}

@@ -1,0 +1,75 @@
+<h1>Listado de Papertoys</h1>
+<button ng-click="adPap.openCreatePanel()">Nuevo</button>
+<br><br>
+Selecciona un anime:
+<autocomplete ng-model="adPap.selectedAnime" data="adPap.animeList" on-select="adPap.getPapers"></autocomplete>
+<br><br>
+<table ng-show="adPap.animeList.length > 0">
+    <thead>
+        <tr>
+            <th ng-click="adPap.changeOrder('id')" class="ordenableTh">
+                Id
+                <span class="glyphicon glyphicon-chevron-up" ng-show="adPap.orderColumn == 'id'"  aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-chevron-down" ng-show="adPap.orderColumn == '-id'"  aria-hidden="true"></span>
+            </th>
+            <th ng-click="adPap.changeOrder('name')" class="ordenableTh">
+                Nombre
+                <span class="glyphicon glyphicon-chevron-up" ng-show="adPap.orderColumn == 'name'"  aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-chevron-down" ng-show="adPap.orderColumn == '-name'"  aria-hidden="true"></span>
+            </th>
+            <th ng-click="adPap.changeOrder('status')" class="ordenableTh">
+                Estado
+                <span class="glyphicon glyphicon-chevron-up" ng-show="adPap.orderColumn == 'status'"  aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-chevron-down" ng-show="adPap.orderColumn == '-status'"  aria-hidden="true"></span>
+            </th>
+            <th ng-click="adPap.changeOrder('style')" class="ordenableTh">
+                Estilo
+                <span class="glyphicon glyphicon-chevron-up" ng-show="adPap.orderColumn == 'style'"  aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-chevron-down" ng-show="adPap.orderColumn == '-style'"  aria-hidden="true"></span>
+            </th>
+            <th ng-click="adPap.changeOrder('parts')" class="ordenableTh">
+                Hojas
+                <span class="glyphicon glyphicon-chevron-up" ng-show="adPap.orderColumn == 'parts'"  aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-chevron-down" ng-show="adPap.orderColumn == '-parts'"  aria-hidden="true"></span>
+            </th>
+            <th>
+                Imagen
+            </th>
+            <th>
+                3d
+            </th>
+            <th>
+                Descarga
+            </th>
+            <th>
+                Orden
+            </th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="paper in adPap.paperList | orderBy: adPap.orderColumn">
+            <td>{{paper.id}}</td>
+            <td>{{paper.name}}</td>
+            <td>{{paper.status}}</td>
+            <td>{{paper.style}}</td>
+            <td>{{paper.parts}}</td>
+            <td>
+                <!-- imagen  -->
+            </td>
+            <td>
+                <!-- 3d  -->
+            </td>
+            <td>
+                <!-- descarga  -->
+            </td>
+            <td>{{paper.order}}</td>
+            <td>
+                <button class="fa fa-eye" ng-click="adAn.openReadPanel(paper)"></button>
+                <button class="fa fa-pencil" ng-click="adAn.openUpdatePanel(paper)"></button>
+                <button class="fa fa-trash-o" ng-click="adAn.deleteAnime(paper)"></button>
+            </td>
+        </tr>
+    </tbody>
+</table>

@@ -1,0 +1,100 @@
+#adminMenu{
+    min-height: 800px;
+    max-width: 70px;
+    min-width: 70px;
+    text-align: center;
+    float: left;
+    background-color: #47c9af;
+}
+
+#adminMenu p {
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #47c9af;
+    margin: 0px;
+}
+
+#adminMenu ul{
+    list-style: none;
+    display: block;
+    padding: 0px;
+    margin: 0px;
+    background-color: aquamarine;
+}
+
+#adminMenu li{
+    cursor: context-menu;
+    padding: 5px;
+    border: 2px solid #47c9af;
+    border-top: none;
+}
+
+#adminMenu li:hover{
+    background-color: aqua;
+}
+
+#adminContent{
+    min-height: 800px;
+    max-height: 800px;
+    width: calc(100% - 70px);
+    overflow-y: scroll;
+    float: left;
+    background-color: burlywood;
+    padding: 15px;
+}
+
+#adminAnimes,#adminPapertoys{
+    min-width: 700px;
+    max-width: 1000px;
+}
+
+#adminContent table{
+    background-color: antiquewhite;
+    width: 100%;
+    border: 1px solid black;
+}
+
+#adminContent th{
+    min-width: 50px;
+    border-bottom: 1px solid black;
+    padding: 5px;
+}
+
+#adminContent .ordenableTh{
+    cursor: pointer;
+}
+#adminContent .ordenableTh:hover{
+    color: darkgrey;
+}
+
+#adminContent #crud{
+    background-color: antiquewhite;
+    padding: 10px;
+}
+
+#adminContent #crud input{
+    min-width: 100%;
+    padding-left:0.4em;
+    padding-right:0.4em;
+    font-size: 1.2em;
+}
+
+
+
+
+
+
+#adminContent table img:hover #previewImage{
+    opacity: 1;
+}
+
+#previewImage{
+    opacity: 0;
+    position: fixed;
+    float:left;
+    z-index: 1;
+    margin: 50px;
+    box-shadow: 0px 0px 40px 0px rgba(0,0,0,0.75);
+}
+

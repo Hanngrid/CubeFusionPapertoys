@@ -1,0 +1,21 @@
+<div id="login" ng-controller="loginCtrl as login">
+    <h3>Login</h3>
+    <form novalidate id="loginForm" name="loginForm">
+        <div class="usuario">
+            <label for="user">Usuario</label>
+            <input id="user" type="text" name="user" ng-model="login.name">
+        </div>
+        <div class="password">
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" ng-model="login.password">
+        </div>
+        <div id="botoneraLogin">
+            <button id="btnEntrar" ng-click="login.checkUserData()">Entrar</button>
+        </div>
+        <br>
+        <div>
+            {{login.status}}
+        </div>
+    </form>
+
+</div>

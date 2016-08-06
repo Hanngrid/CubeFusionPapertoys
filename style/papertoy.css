@@ -1,0 +1,127 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway);
+
+#fichas {
+    overflow: hidden;
+    margin: 0px auto;
+    text-align: center;
+    max-width: 900px;
+}
+
+#ficha {
+    margin: 20px;
+    width: 150px;
+    display: inline-block;
+    text-align: left;
+}
+
+#paperInfo {
+    background-color: #e84c3d;
+    height: 40px;
+    font-family: Raleway;
+    color: white;
+    padding-left: 5px;
+    padding-top: 5px;
+}
+
+#botonera {
+    background-color: #e84c3d;
+    margin-top:-5px;
+    height: 40px;
+    overflow: hidden;
+    text-align: center;
+}
+
+#imagenFicha {
+    width: 150px;
+    height: 150px;
+}
+
+
+#nombreFicha {
+    font-size: medium;
+    margin: 0px;
+}
+
+#estadoFicha {
+    font-size: small;
+    margin: 0px;
+}
+
+#follas {
+    float: right;
+    margin-right: 3px;
+}
+
+#folla {
+    height: 15px;
+}
+
+#botonera button{
+    cursor: pointer;
+    background-color: #e84c3d;
+    border: none;
+    height: 23px;
+    width: 45%;
+    box-shadow: 2px 2px 5px 0px rgba(122,46,39,1);
+    color: #FFF;
+    margin-top: 10px;
+    font-family: Raleway;
+}
+
+#botonera button:active{
+    box-shadow: 1px 1px 2px 0px rgba(122,46,39,1);
+}
+
+#botonera button:hover{
+    background-color: #DD4132;
+}
+
+#botonera button:focus{
+    outline:0px;
+}
+
+
+
+
+/*
+
+.black_overlay {
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1001;
+    -moz-opacity: 0.8;
+    opacity: .80;
+    filter: alpha(opacity=80);
+}
+
+.white_content {
+    display: none;
+    position: fixed;
+    top: 25%;
+    left: 40%;
+    padding: 16px;
+    background-color: white;
+    z-index: 1002;
+    overflow: auto;
+}
+
+.white_content img {
+    height: 250px;
+}
+
+#fichas a {
+    text-decoration: none;
+}
+
+#cerrar {
+    background-image: url(http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/close_zps8ekopgif.png);
+    width: 30px;
+    height: 30px;
+    float: right;
+}
+*/

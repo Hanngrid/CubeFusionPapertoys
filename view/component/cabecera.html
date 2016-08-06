@@ -1,0 +1,14 @@
+<div id="cabecera" ng-controller="cabCtrl as cab">
+
+    <button ng-click="main.setView('main')">Inicio</button>
+    <button ng-click="main.setView('paper')">Papertoys</button>
+    <button ng-click="main.setView('about')">Nosotros</button>
+    <button ng-click="main.setView('contact')">Contacto</button>
+
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <label ng-show="main.service.loggedUser.nickName">Bienvenido {{main.service.loggedUser.nickName}}</label>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+    <button ng-click="main.logout()">Logout</button>
+
+</div>

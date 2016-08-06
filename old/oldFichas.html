@@ -1,0 +1,245 @@
+<html>
+<head>
+    <style type="text/css">
+        @import url(http://fonts.googleapis.com/css?family=Raleway);
+
+        #fichas {
+            overflow: hidden;
+            margin: 0px auto;
+            text-align: center;
+        }
+
+        #ficha {
+            margin: 20px;
+            width: 150px;
+            position: relative;
+            display: inline-block;
+            text-align: left;
+        }
+
+        #cabecera {
+            background-color: #e84c3d;
+            width: 150px;
+            min-height: 40px;
+            padding-left: 5px;
+            padding-bottom: 3px;
+            font-family: Raleway;
+            color: white;
+        }
+
+        #imagenFicha {
+            width: 150px !important;
+            height: 150px !important;
+            margin-bottom: 0px !important;
+            min-width: 150px !important;
+        }
+
+        #botonera {
+            overflow: hidden;
+            padding-top: 5px;
+            background-color: #e84c3d;
+            width: 150px;
+            height: 37px;
+            font-size: 0;
+        }
+
+        #nombreFicha {
+            font-size: 20;
+            margin: 0px;
+        }
+
+        #estadoFicha {
+            font-size: 10;
+            margin: 0px;
+        }
+
+        #follas {
+            float: right;
+            margin-top: 3px;
+            margin-right: 3px;
+        }
+
+        #folla {
+            height: 15px !important;
+        }
+
+        #botonFicha3d {
+            float: left;
+            background-image: url(http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Iconos/Boton3dps_zpszklpavr0.png);
+            background-size: 60px;
+            background-repeat: no-repeat;
+            margin-bottom: 5px;
+            height: 26px;
+            width: 60px;
+        }
+
+        #botonFicha3d:active {
+            background-image: url(http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Iconos/Boton3dpulsadops_zps35nh6yks.png);
+        }
+
+        #botonFicha3d:hover {
+            cursor: pointer;
+        }
+
+        #botonFichadown {
+            float: right;
+            background-image: url(http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Iconos/Botondlps_zps4kbwyokw.png);
+            background-size: 85px;
+            background-repeat: no-repeat;
+            height: 26px;
+            width: 85px;
+        }
+
+        #botonFichadown:active {
+            background-image: url(http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Iconos/Botondlpulsadops_zpssahqcmca.png);
+        }
+
+        #botonFichadown:hover {
+            cursor: pointer;
+        }
+
+        .black_overlay {
+            display: none;
+            position: fixed;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index: 1001;
+            -moz-opacity: 0.8;
+            opacity: .80;
+            filter: alpha(opacity=80);
+        }
+
+        .white_content {
+            display: none;
+            position: fixed;
+            top: 25%;
+            left: 40%;
+            padding: 16px;
+            background-color: white;
+            z-index: 1002;
+            overflow: auto;
+        }
+
+        .white_content img {
+            height: 250px !important;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        #cerrar {
+            background-image: url(http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/close_zps8ekopgif.png);
+            width: 30px !important;
+            height: 30px !important;
+            float: right;
+        }
+
+
+    </style>
+    <script type="text/javascript">
+        function abrirCaixa(element) {
+            element.parentNode.parentNode.children[element.parentNode.parentNode.children.length - 2].style.display = 'block';
+            element.parentNode.parentNode.children[element.parentNode.parentNode.children.length - 1].style.display = 'block'
+        }
+        function cerrarCaixa(element) {
+            element.parentNode.parentNode.children[element.parentNode.parentNode.children.length - 2].style.display = 'none';
+            element.parentNode.parentNode.children[element.parentNode.parentNode.children.length - 1].style.display = 'none'
+        }
+    </script>
+    <title></title>
+</head>
+<body>
+<div id="fichas">
+
+    <?xml version="1.0"?>
+    <div id="ficha">
+        <div id="cabecera">
+            <div id="follas">1<img id="folla"
+                                   src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Iconos/Icono%20Follas_zpsi0xem21t.png"/>
+            </div>
+            <div id="nombreFicha">Gajeel Redfox</div>
+        </div>
+        <img id="imagenFicha"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Imagenes%20Personajes/Fairy%20Tail/gajeel_zpsu9tuvsgn.jpg"/>
+
+        <div id="botonera">
+            <div id="botonFicha3d" onclick="abrirCaixa(this)">a</div>
+            <a target="_blank" id="botonFichadown"
+               href="https://mega.nz/#!6phHUZrb!YxqmNfC1E7_qcqrNqa9LQ6P1ihygCHsnms6hMbJvkfA">
+                a
+            </a></div>
+        <div id="light" class="white_content"><img
+                src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/3Ds/Giratorios/Fairy%20Tail/Gajeel.gif"/><a
+                href="javascript:void(0)" onclick="cerrarCaixa(this)"><img id="cerrar"
+                                                                           src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/close_zps8ekopgif.png"/></a>
+        </div>
+        <div id="fade" class="black_overlay">a</div>
+    </div>
+    <div id="ficha">
+        <div id="cabecera">
+            <div id="follas">1<img id="folla"
+                                   src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Iconos/Icono%20Follas_zpsi0xem21t.png"/>
+            </div>
+            <div id="nombreFicha">Gray Fullbuster</div>
+        </div>
+        <img id="imagenFicha"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Imagenes%20Personajes/Fairy%20Tail/Gray_12_zpsbyoavrzz.jpg"/>
+
+        <div id="botonera">
+            <div id="botonFicha3d" onclick="abrirCaixa(this)">a</div>
+            <a target="_blank" id="botonFichadown"
+               href="https://mega.nz/#!zlQxnJoY!Sp3OjJWlb_RUGoHCZuumPXgoFug3D7dU_TaZuDEINOs">
+                a
+            </a></div>
+        <div id="light" class="white_content"><img
+                src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/3Ds/Giratorios/Fairy%20Tail/Gray_zpsucgazjkv.gif"/><a
+                href="javascript:void(0)" onclick="cerrarCaixa(this)"><img id="cerrar"
+                                                                           src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/close_zps8ekopgif.png"/></a>
+        </div>
+        <div id="fade" class="black_overlay">a</div>
+    </div>
+    <div id="ficha">
+        <div id="cabecera">
+            <div id="follas">2<img id="folla"
+                                   src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Iconos/Icono%20Follas_zpsi0xem21t.png"/>
+            </div>
+            <div id="nombreFicha">Mavis Vermilion</div>
+        </div>
+        <img id="imagenFicha"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Imagenes%20Personajes/Fairy%20Tail/Mavis_Mugshot_2_zpsmpoon1tt.png"/>
+
+        <div id="botonera"><a target="_blank" id="botonFichadown"
+                              href="https://mega.nz/#F!rtIVBCTT!fdHSSPk99cVLyXssDDZOIg">
+            a
+        </a></div>
+    </div>
+    <div id="ficha">
+        <div id="cabecera">
+            <div id="follas">2<img id="folla"
+                                   src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Iconos/Icono%20Follas_zpsi0xem21t.png"/>
+            </div>
+            <div id="nombreFicha">Wendy Marvell</div>
+        </div>
+        <img id="imagenFicha"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Imagenes%20Personajes/Fairy%20Tail/Wendy_zps9haukzov.png"/>
+
+        <div id="botonera">
+            <div id="botonFicha3d" onclick="abrirCaixa(this)">a</div>
+            <a target="_blank" id="botonFichadown" href="https://mega.nz/#F!WgwTVRiC!iXT3bTBQgfB5Eh3GwIZ05g">
+                a
+            </a></div>
+        <div id="light" class="white_content"><img
+                src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/3Ds/Giratorios/Fairy%20Tail/3D-Wendy_zpsjenyvq70.gif"/><a
+                href="javascript:void(0)" onclick="cerrarCaixa(this)"><img id="cerrar"
+                                                                           src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/close_zps8ekopgif.png"/></a>
+        </div>
+        <div id="fade" class="black_overlay">a</div>
+    </div>
+
+</div>
+</body>
+</html>

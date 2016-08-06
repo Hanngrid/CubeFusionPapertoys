@@ -1,0 +1,36 @@
+<div id="letterMenu">
+    <div>
+        <button id="all" ng-class="an.getClassByLetter('all')" ng-click="an.setLetter('all')"> Todo </button>
+        <button ng-class="an.getClassByLetter('*')" ng-click="an.setLetter('*')"> * </button>
+        <button ng-class="an.getClassByLetter('A')" ng-click="an.setLetter('A')"> A </button>
+        <button ng-class="an.getClassByLetter('B')" ng-click="an.setLetter('B')"> B </button>
+        <button ng-class="an.getClassByLetter('C')" ng-click="an.setLetter('C')"> C </button>
+        <button ng-class="an.getClassByLetter('D')" ng-click="an.setLetter('D')"> D </button>
+        <button ng-class="an.getClassByLetter('E')" ng-click="an.setLetter('E')"> E </button>
+        <button ng-class="an.getClassByLetter('F')" ng-click="an.setLetter('F')"> F </button>
+        <button ng-class="an.getClassByLetter('G')" ng-click="an.setLetter('G')"> G </button>
+        <button ng-class="an.getClassByLetter('H')" ng-click="an.setLetter('H')"> H </button>
+        <button ng-class="an.getClassByLetter('I')" ng-click="an.setLetter('I')"> I </button>
+        <button ng-class="an.getClassByLetter('J')" ng-click="an.setLetter('J')"> J </button>
+        <button ng-class="an.getClassByLetter('K')" ng-click="an.setLetter('K')"> K </button>
+        <button ng-class="an.getClassByLetter('L')" ng-click="an.setLetter('L')"> L </button>
+        <button ng-class="an.getClassByLetter('M')" ng-click="an.setLetter('M')"> M </button>
+        <button ng-class="an.getClassByLetter('N')" ng-click="an.setLetter('N')"> N </button>
+        <button ng-class="an.getClassByLetter('O')" ng-click="an.setLetter('O')"> O </button>
+        <button ng-class="an.getClassByLetter('P')" ng-click="an.setLetter('P')"> P </button>
+        <button ng-class="an.getClassByLetter('Q')" ng-click="an.setLetter('Q')"> Q </button>
+        <button ng-class="an.getClassByLetter('R')" ng-click="an.setLetter('R')"> R </button>
+        <button ng-class="an.getClassByLetter('S')" ng-click="an.setLetter('S')"> S </button>
+        <button ng-class="an.getClassByLetter('T')" ng-click="an.setLetter('T')"> T </button>
+        <button ng-class="an.getClassByLetter('U')" ng-click="an.setLetter('U')"> U </button>
+        <button ng-class="an.getClassByLetter('V')" ng-click="an.setLetter('V')"> V </button>
+        <button ng-class="an.getClassByLetter('W')" ng-click="an.setLetter('W')"> W </button>
+        <button ng-class="an.getClassByLetter('X')" ng-click="an.setLetter('X')"> X </button>
+        <button ng-class="an.getClassByLetter('Y')" ng-click="an.setLetter('Y')"> Y </button>
+        <button ng-class="an.getClassByLetter('Z')" ng-click="an.setLetter('Z')"> Z </button>
+    </div>
+</div>
+<div id="searchField">
+    <button id="back" ng-click="an.back()" ng-show="an.papertoyList.length > 0">Volver</button>
+    <input type="text" ng-model="an.searchText" ng-click="an.reset()" ng-blur="an.searchTextBlur()">
+</div>

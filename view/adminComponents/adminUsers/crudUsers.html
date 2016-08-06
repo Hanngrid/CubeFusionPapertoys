@@ -1,0 +1,22 @@
+<h1>{{adUs.title}}</h1>
+<form name="readCreateForm" novalidate id="crud">
+
+    <p>
+        Usuario<br><input type="text" ng-model="adUs.currentUser.nickName" ng-readonly="adUs.mode=='READ'"><br>
+    </p>
+    <p>
+        Nombre<br><input type="text" ng-model="adUs.currentUser.name" ng-readonly="adUs.mode=='READ'"><br>
+    </p>
+    <p>
+        Apellidos<br><input type="text" ng-model="adUs.currentUser.lastName" ng-readonly="adUs.mode=='READ'"><br>
+    </p>
+    <p>
+        email<br><input type="text" ng-model="adUs.currentUser.email" ng-readonly="adUs.mode=='READ'"><br>
+    </p>
+
+</form>
+<br>
+<button ng-click="adUs.save()" ng-hide="adUs.mode=='READ'">Guardar</button>
+<button ng-click="adUs.cancel()" ng-hide="adUs.mode=='READ'">Cancelar</button>
+<button ng-click="adUs.cancel()" ng-show="adUs.mode=='READ'">Volver</button>
+

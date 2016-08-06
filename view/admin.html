@@ -1,0 +1,23 @@
+<div id="adminPanel" ng-controller="adminController as admin">
+
+    <div id="adminMenu">
+        <p>Administraci&oacute;n</p>
+
+        <ul>
+            <li ng-click="admin.changeView(0)">Entradas</li>
+        </ul>
+        <p></p>
+        <ul>
+            <li ng-click="admin.changeView(1)">Animes</li>
+            <li ng-click="admin.changeView(2)">Papertoys</li>
+        </ul>
+        <p></p>
+        <ul>
+            <li ng-click="admin.changeView(3)">Usuarios</li>
+        </ul>
+    </div>
+
+    <div id="adminContent" ng-include="admin.currentView">
+    </div>
+
+</div>

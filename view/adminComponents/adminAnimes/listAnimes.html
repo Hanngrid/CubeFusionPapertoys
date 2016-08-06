@@ -1,0 +1,46 @@
+<h1>Listado de Animes</h1>
+<button ng-click="adAn.openCreatePanel()">Nuevo</button>
+<br><br>
+<div id="previewImage">
+    <img src="/cubefusion/CubeFusionPapertoysWeb/images/animes/angelbeats.jpg"/>
+</div>
+<table ng-show="adAn.animeList.length > 0">
+    <thead>
+        <tr>
+            <th ng-click="adAn.changeOrder('id')" class="ordenableTh">
+                Id
+                <span class="glyphicon glyphicon-chevron-up" ng-show="adAn.orderColumn == 'id'"  aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-chevron-down" ng-show="adAn.orderColumn == '-id'"  aria-hidden="true"></span>
+            </th>
+            <th ng-click="adAn.changeOrder('name')" class="ordenableTh">
+                Nombre
+                <span class="glyphicon glyphicon-chevron-up" ng-show="adAn.orderColumn == 'name'"  aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-chevron-down" ng-show="adAn.orderColumn == '-name'"  aria-hidden="true"></span>
+            </th>
+            <th>
+                Imagen
+            </th>
+            <th ng-click="adAn.changeOrder('paperCount')" class="ordenableTh">
+                Papertoys
+                <span class="glyphicon glyphicon-chevron-up" ng-show="adAn.orderColumn == 'paperCount'"  aria-hidden="true"></span>
+                <span class="glyphicon glyphicon-chevron-down" ng-show="adAn.orderColumn == '-paperCount'"  aria-hidden="true"></span>
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="anime in adAn.animeList | orderBy: adAn.orderColumn">
+            <td>{{anime.id}}</td>
+            <td>{{anime.name}}</td>
+            <td>
+                <img style="height:50px;" src="{{adAn.imageRoute}}{{anime.imageName}}.jpg"/>
+            </td>
+            <td>{{anime.paperCount}}</td>
+            <td>
+                <button class="fa fa-eye" ng-click="adAn.openReadPanel(anime)"></button>
+                <button class="fa fa-pencil" ng-click="adAn.openUpdatePanel(anime)"></button>
+                <button class="fa fa-trash-o" ng-click="adAn.deleteAnime(anime)"></button>
+            </td>
+        </tr>
+    </tbody>
+</table>

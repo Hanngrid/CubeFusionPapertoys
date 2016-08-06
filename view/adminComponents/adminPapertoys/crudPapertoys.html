@@ -1,0 +1,44 @@
+<h1>{{adPap.title}}</h1>
+<form name="readCreateForm" novalidate id="crud">
+    <p ng-hide="adPap.mode=='CREATE'">
+        Id<br><input type="number" ng-model="adPap.currentPaper.id" readonly><br>
+    </p>
+    <p>
+        Anime<br>
+        <autocomplete ng-model="adPap.selectedAnime" data="adPap.animeList" on-select="adPap.getPapers" ng-readonly="adPap.mode=='READ'"></autocomplete>
+    </p>
+    <p>
+        Nombre<br><input type="text" ng-model="adPap.currentPaper.name" ng-readonly="adPap.mode=='READ'"><br>
+    </p>
+    <p>
+        Estado<br><input type="text" ng-model="adPap.currentPaper.status" ng-readonly="adPap.mode=='READ'"><br>
+    </p>
+    <p>
+        Estilo<br><input type="text" ng-model="adPap.currentPaper.style" ng-readonly="adPap.mode=='READ'"><br>
+    </p>
+    <p>
+        Hojas<br><input type="number" ng-model="adPap.currentPaper.parts" ng-readonly="adPap.mode=='READ'"><br>
+    </p>
+    <p>
+        Imagen<br><input type="text" ng-model="adPap.currentPaper.image" ng-readonly="adPap.mode=='READ'"><br>
+        <img ng-show="adPap.currentPaper.image" src="{{adPap.currentPaper.image}}">
+        <br ng-show="adPap.currentPaper.image">
+    </p>
+    <p>
+        3d<br><input type="text" ng-model="adPap.currentPaper.model" ng-readonly="adPap.mode=='READ'"><br>
+        <img ng-show="adPap.currentPaper.model" src="{{adPap.currentPaper.model}}" width="150">
+        <br ng-show="adPap.currentPaper.model">
+    </p>
+    <p>
+        Descarga<br><input type="text" ng-model="adPap.currentPaper.download" ng-readonly="adPap.mode=='READ'"><br>
+    </p>
+    <p>
+        Orden<br><input type="number" ng-model="adPap.currentPaper.order" ng-readonly="adPap.mode=='READ'"><br>
+    </p>
+
+</form>
+<br>
+<button ng-click="adPap.save()" ng-hide="adPap.mode=='READ'">Guardar</button>
+<button ng-click="adPap.cancel()" ng-hide="adPap.mode=='READ'">Cancelar</button>
+<button ng-click="adPap.cancel()" ng-show="adPap.mode=='READ'">Volver</button>
+

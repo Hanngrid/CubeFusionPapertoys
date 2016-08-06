@@ -1,0 +1,12 @@
+<a target="_blank" href="" ng-show="an.mode='anime' && an.filterByLetter(a.name)" ng-click="an.getPapertoys(a)">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">{{an.calculateName(a.name)}}</div>
+            <div id="cantidad">{{a.paperCount}}<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="{{an.imageRoute}}{{a.imageName}}.jpg"
+             tag="{{a.name}}"/></div>
+</a>

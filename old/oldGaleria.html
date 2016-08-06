@@ -1,0 +1,729 @@
+<head>
+    <title></title>
+
+    <script type="text/javascript">
+
+        var anterior;
+
+        function filtra(filtro, a) {
+
+            if (a) {
+                a.parentNode.className = "active";
+            }
+            if (anterior) {
+                anterior.parentNode.className = "";
+            } else {
+                document.getElementById("cssmenu").children[0].children[0].className = "";
+            }
+
+            anterior = a;
+
+            var images = document.getElementsByClassName("imagen");
+
+            var valor = "";
+
+            for (var i = 0; i < images.length; i++) {
+                var imagen = images[i].children[1];
+                ocultarConAnimacion(images[i], imagen);
+            }
+            setTimeout(function () {
+                for (var i = 0; i < images.length; i++) {
+                    var imagen = images[i].children[1];
+                    valor = imagen.attributes.tag.value.toLowerCase();
+                    if (valor.startsWith(filtro.toLowerCase()) || filtro == "todo") {
+                        displayInline(images[i]);
+                    } else {
+                        displayNone(images[i]);
+                    }
+
+                }
+                setTimeout(function () {
+                    for (var i = 0; i < images.length; i++) {
+                        var imagen = images[i].children[1];
+                        valor = imagen.attributes.tag.value.toLowerCase();
+
+                        if (valor.startsWith(filtro.toLowerCase()) || filtro == "todo") {
+                            mostrarConAnimacion(images[i], imagen);
+                        } else {
+                            ocultarConAnimacion(images[i], imagen);
+
+                        }
+                    }
+                }, 150);
+            }, 150);
+
+        }
+
+        function mostrarConAnimacion(image, imagen) {
+            image.style.width = "200px";
+            image.style.height = "120px";
+            imagen.style.width = "200px";
+            imagen.style.height = "120px";
+            imagen.style.opacity = 1;
+            image.style.margin = "5px";
+        }
+
+        function ocultarConAnimacion(image, imagen) {
+            image.style.width = "0px";
+            imagen.style.width = "0px";
+            imagen.style.opacity = 0;
+            image.style.margin = "0px";
+            image.style.marginTop = "5px";
+            image.style.marginLeft = "5px";
+        }
+
+        function displayNone(imagen) {
+            imagen.style.display = "none";
+        }
+        function displayInline(imagen) {
+            imagen.style.display = "inline-block";
+        }
+
+        function onTextChange() {
+            var texto = document.getElementById("textId");
+            if (texto.value == "Buscar" || texto.value == "") {
+                filtra("todo");
+            } else {
+                filtra(texto.value);
+            }
+
+        }
+
+        function reset() {
+            var texto = document.getElementById("textId");
+            texto.value = "";
+            anterior.parentNode.className = "";
+            onTextChange();
+        }
+
+        function setBuscarValue() {
+            var texto = document.getElementById("textId");
+            if (texto.value == "") {
+                texto.value = "Buscar";
+                onTextChange();
+            }
+        }
+
+    </script>
+</head>
+<body>
+<div id="cssmenu">
+    <ul>
+        <li class="active"><a onclick="filtra('todo',this)"> Todo </a></li>
+        <li><a onclick="filtra('*',this)"> * </a></li>
+        <li><a onclick="filtra('A',this)"> A </a></li>
+        <li><a onclick="filtra('B',this)"> B </a></li>
+        <li><a onclick="filtra('C',this)"> C </a></li>
+        <li><a onclick="filtra('D',this)"> D </a></li>
+        <li><a onclick="filtra('E',this)"> E </a></li>
+        <li><a onclick="filtra('F',this)"> F </a></li>
+        <li><a onclick="filtra('G',this)"> G </a></li>
+        <li><a onclick="filtra('H',this)"> H </a></li>
+        <li><a onclick="filtra('I',this)"> I </a></li>
+        <li><a onclick="filtra('J',this)"> J </a></li>
+        <li><a onclick="filtra('K',this)"> K </a></li>
+        <li><a onclick="filtra('L',this)"> L </a></li>
+        <li><a onclick="filtra('M',this)"> M </a></li>
+        <li><a onclick="filtra('N',this)"> N </a></li>
+        <li><a onclick="filtra('O',this)"> O </a></li>
+        <li><a onclick="filtra('P',this)"> P </a></li>
+        <li><a onclick="filtra('Q',this)"> Q </a></li>
+        <li><a onclick="filtra('R',this)"> R </a></li>
+        <li><a onclick="filtra('S',this)"> S </a></li>
+        <li><a onclick="filtra('T',this)"> T </a></li>
+        <li><a onclick="filtra('U',this)"> U </a></li>
+        <li><a onclick="filtra('V',this)"> V </a></li>
+        <li><a onclick="filtra('W',this)"> W </a></li>
+        <li><a onclick="filtra('X',this)"> X </a></li>
+        <li><a onclick="filtra('Y',this)"> Y </a></li>
+        <li><a onclick="filtra('Z',this)"> Z </a></li>
+    </ul>
+</div>
+
+<div id="campoBuscar">
+    <input id="textId" class="search-text" type="search" onkeyup="onTextChange()" onfocus="reset()"
+           onBlur="setBuscarValue()" value="Buscar">
+</div>
+
+<div id="galeria">
+
+    <?xml version="1.0"?>
+    <a target="_blank" href="http://cubefusionpapertoys.com/papertoys/angel-beats/">
+        <div class="imagen">
+            <div id="testo">
+                <div id="nombrepaper">Angel Beats!</div>
+                <div id="cantidad">1<img
+                        src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                        style="width: 15px; height: 17px;"/></div>
+            </div>
+            <img style="width:200px; height:120px; opacity: 1;"
+                 src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Angel%20Beatsrec_zpserqspw19.jpg"
+                 tag="Angel Beats!"/></div>
+    </a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/ao-no-exorcist/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Ao no Exorcist</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/aonoexorcist_zpsx9lfegvz.gif"
+             tag="Ao no Exorcist"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/bakuman/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Bakuman</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Bakumanrec_zps0t7zxfwx.jpg"
+             tag="Bakuman"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/beck/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Beck</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Beckrec2_zps424gcstg.jpg"
+             tag="Beck"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/ben-10/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Ben 10</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/ben%2010rec2_zpsb9xtwrty.jpg"
+             tag="Ben 10"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/binbougami-ga/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Binbougami-Ga!</div>
+            <div id="cantidad">2<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/binbougami_zpsyyahniw6.gif"
+             tag="Binbougami-Ga!"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/black-rock-shooter/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Black Rock Shooter</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/black%20rock%20shooterrec_zpsdusth2i0.jpg"
+             tag="Black Rock Shooter"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/bleach/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Bleach</div>
+            <div id="cantidad">20<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/bleach_zpsooubgt3i.gif"
+             tag="Bleach"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/blue-dragon/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Blue Dragon</div>
+            <div id="cantidad">2<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Blue%20dragomrec2_zps5ztlhsdn.jpg"
+             tag="Blue Dragon"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/c-the-money-of-soul-and-possibility-of-control/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">C: The Money of Soul ...</div>
+            <div id="cantidad">3<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/cthemoney_zpsvyvbfmlr.gif"
+             tag="C: The Money of Soul ..."/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/card-captor-sakura/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Card Captor Sakura</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/sakurarec2_zpsxz1zytdz.jpg"
+             tag="Card Captor Sakura"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/code-geass/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Code Geass</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/code%20geassrec2_zpsnbwpnuvq.jpg"
+             tag="Code Geass"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/danganronpa/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Danganronpa</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/dagaronparec2_zps6rxydk40.jpg"
+             tag="Danganronpa"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/denpa-onna-to-seishun-otoko/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Denpa Onna to Seishun ...</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Denpa%20Onna%20to%20Seishun%20Otokorec2_zpswf6a9koi.jpg"
+             tag="Denpa Onna to Seishun ..."/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/digimon/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Digimon</div>
+            <div id="cantidad">3<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Digimonrec_zps0uaoasna.jpg"
+             tag="Digimon"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/dr-black-jack/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Dr. Black Jack</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Dr%20black%20jackrec2_zps9bvuta22.jpg"
+             tag="Dr. Black Jack"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/dragon-ball/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Dragon Ball</div>
+            <div id="cantidad">19<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/dragon%20ballrec_zpsxo3j9va1.jpg"
+             tag="Dragon Ball"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/dragonaut/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Dragonaut</div>
+            <div id="cantidad">9<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/dragonautrec_zpsyj2f9jom.jpg"
+             tag="Dragonaut"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/fairy-tail/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Fairy Tail</div>
+            <div id="cantidad">4<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Fairy%20Tail_zpshuf07jva.jpg"
+             tag="Fairy Tail"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/fullmetal-alchemist/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Fullmetal Alchemist</div>
+            <div id="cantidad">27<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Full%20metal%20alchemistrec2_zps2rpxpubt.jpg"
+             tag="Fullmetal Alchemist"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/gintama/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Gintama</div>
+            <div id="cantidad">2<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/gintamarec_zpsegfnbz52.jpg"
+             tag="Gintama"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/guilty-crown/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Guilty Crown</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Guilty%20crownrec2_zpsgleex9b9.jpg"
+             tag="Guilty Crown"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/high-school-dxd/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">High School DxD</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/high%20school%20dxdrec_zpsjyvkn8yx.jpg"
+             tag="High School DxD"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/high-school-of-the-dead/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">High School of the Dead</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/high%20school%20of%20the%20deathrec2_zps8w7a89ur.jpg"
+             tag="High School of the Dead"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/hunterxhunter/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">HunterxHunter</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Hunter-x-Hunterrec2_zpskg3tyde0.jpg"
+             tag="HunterxHunter"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/inazuma-eleven/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Inazuma Eleven</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Inazuma%20elvenrec_zpsmxk0tu2g.jpg"
+             tag="Inazuma Eleven"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/kami-nomi-zo-shiru-sekai/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Kami Nomi zo Shiru ...</div>
+            <div id="cantidad">2<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Kami_Nomi_zo_Shiru_Sekairec2_zpsnidnrws8.jpg"
+             tag="Kami Nomi zo Shiru ..."/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/arietty/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Karigurashi no Arrietty</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Arriettyrec_zpsodnbxt0g.jpg"
+             tag="Karigurashi no Arrietty"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/kill-la-kill/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Kill la Kill</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Kill%20la%20Killrec2_zpskqmcmi4a.jpg"
+             tag="Kill la Kill"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/king-of-fighters/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">King of Fighters</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/King%20of%20fightersrec2_zpsk5ubhy6y.jpg"
+             tag="King of Fighters"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/konjiki-no-gash-bell/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Konjiki no Gash Bell!!</div>
+            <div id="cantidad">2<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Gash%20bellrec2_zpsq6sdewbs.jpg"
+             tag="Konjiki no Gash Bell!!"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/kuroko-no-basket/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Kuroko no Basket</div>
+            <div id="cantidad">7<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Kuroko%20no%20Basukerec_zpsqxlutvhx.jpg"
+             tag="Kuroko no Basket"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/magi/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Magi</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Magirec2_zpsszg1qc2c.jpg"
+             tag="Magi"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/megaman/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Megaman</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Megamanrec2_zpslffdxsfc.jpg"
+             tag="Megaman"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/mirai-nikki/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Mirai Nikki</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Mirai_Nikkirec_zpsrwf6v36w.jpg"
+             tag="Mirai Nikki"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/naruto/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Naruto</div>
+            <div id="cantidad">24<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Narutorec2_zpsuhs3yp54.jpg"
+             tag="Naruto"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/neon-genesis-evangelion/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Neon Genesis Evange...</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Neon_Genesis_Evangelionrec2_zpsm4i5dzuz.jpg"
+             tag="Neon Genesis Evange..."/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/one-piece/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">One Piece</div>
+            <div id="cantidad">67<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/One%20Piecerec_zpsxbqfhxhd.jpg"
+             tag="One Piece"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/pokemon/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Pokemon</div>
+            <div id="cantidad">12<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Pokemonrec_zpspjey0sby.jpg"
+             tag="Pokemon"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/poyopoyo/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">PoyoPoyo PoyoPoyo</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/PoyoPoyo%20PoyoPoyorec_zpsjbtgzlql.jpg"
+             tag="PoyoPoyo PoyoPoyo"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/queens-blade/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Queen’s Blade</div>
+            <div id="cantidad">2<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Queens%20bladerec2_zpsaxxww4dv.jpg"
+             tag="Queen&#x2019;s Blade"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/seikon-no-quaser/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Seikon no Qwaser</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Seikon%20no%20Qwaserrec_zpschyzmeam.jpg"
+             tag="Seikon no Qwaser"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/shingeki-no-kyojin/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Shingeki no Kyojin</div>
+            <div id="cantidad">4<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Shingeki-no-Kyojin%20copia_zpslmpcigkh.jpg"
+             tag="Shingeki no Kyojin"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/sora-no-otoshimono/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Sora no Otoshimono</div>
+            <div id="cantidad">2<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Sora%20no%20Otoshimonorec_zpsdjmr3aqc.jpg"
+             tag="Sora no Otoshimono"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/soul-eater/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Soul Eater</div>
+            <div id="cantidad">4<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Soul%20Eaterrec2_zpskiotaogi.jpg"
+             tag="Soul Eater"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/sao/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Sword Art Online</div>
+            <div id="cantidad">2<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Sword%20Art%20Onlinerec2_zpsmscicfv6.jpg"
+             tag="Sword Art Online"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/tamako-market/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Tamako Market</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Tamako%20Marketrec_zpsfy2pdmli.jpg"
+             tag="Tamako Market"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/tengen-toppa-gurren-lagann/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Tengen Toppa Gurren...</div>
+            <div id="cantidad">2<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Tengentoppagurrenlagannrec2_zpsjg72aokv.jpg"
+             tag="Tengen Toppa Gurren..."/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/the-legend-of-zelda/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">The Legend of Zelda</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/The%20legend%20of%20Zelda2rec_zps6kyjm1yc.jpg"
+             tag="The Legend of Zelda"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/tohou-project/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Tohou Project</div>
+            <div id="cantidad">3<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Tohou%20Projectrec2_zpsb51akno6.jpg"
+             tag="Tohou Project"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/toriko/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Toriko</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Torikorec2_zps9knqzqcp.jpg"
+             tag="Toriko"/></div>
+</a><a target="_blank" href="http://cubefusionpapertoys.com/papertoys/yotsuba/">
+    <div class="imagen">
+        <div id="testo">
+            <div id="nombrepaper">Yotsuba!</div>
+            <div id="cantidad">1<img
+                    src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Icono%20cubo_zps7zlfuzva.png"
+                    style="width: 15px; height: 17px;"/></div>
+        </div>
+        <img style="width:200px; height:120px; opacity: 1;"
+             src="http://i1061.photobucket.com/albums/t466/Cubefusion_Papertoys/Animes/Yotsubarec_zpsjw6mjnur.jpg"
+             tag="Yotsuba!"/></div>
+</a>
+
+
+</div>
+
+</body>
+</html>

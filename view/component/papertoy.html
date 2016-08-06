@@ -1,0 +1,20 @@
+<div id="ficha" ng-show="an.mode='paper' && an.filterByLetter(p.name)">
+
+    <div id="paperInfo">
+
+        <div id="nombreFicha">{{an.calculatePaperName(p.name)}}</div>
+        <div id="follas">
+            {{p.parts}}
+            <img id="folla" src="/images/pageIcon.PNG"/>
+        </div>
+        <div id="estadoFicha">{{p.status}}</div>
+    </div>
+
+    <img id="imagenFicha" src="{{p.image}}"/>
+
+    <div id="botonera">
+        <button ng-show="p.model">3D</button>
+        <button>Descarga</button>
+    </div>
+
+</div>
