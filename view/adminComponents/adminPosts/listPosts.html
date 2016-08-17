@@ -1,0 +1,39 @@
+<h1>Listado de Entradas</h1>
+<button ng-click="adPost.openCreatePanel()">Nuevo</button>
+<br><br>
+<table ng-show="adPost.animeList.length > 0">
+    <thead>
+    <tr>
+        <th ng-click="" class="ordenableTh">
+            Título
+        </th>
+        <th ng-click="" class="ordenableTh">
+            Categoría
+        </th>
+        <th ng-click="" class="ordenableTh">
+            Tags
+        </th>
+        <th ng-click="" class="ordenableTh">
+            Autor
+        </th>
+        <th ng-click="" class="ordenableTh">
+            Fecha Creación
+        </th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="post in adPost.postsList">
+        <td>{{post.title}}</td>
+        <td>{{post.category}}</td>
+        <td>{{post.tags}}</td>
+        <td>{{post.autor}}</td>
+        <td>{{post.creationDate | date : 'dd/MM/yyyy'}}</td>
+        <td>
+            <button class="fa fa-eye" ng-click="adPost.openReadPanel(post)"></button>
+            <button class="fa fa-pencil" ng-click="adPost.openUpdatePanel(post)"></button>
+            <button class="fa fa-trash-o" ng-click="adPost.deleteAnime(post)"></button>
+        </td>
+    </tr>
+    </tbody>
+</table>

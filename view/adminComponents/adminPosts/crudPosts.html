@@ -1,0 +1,32 @@
+<h1>Nueva Entrada</h1>
+<form name="readCreateForm" novalidate id="crud">
+
+    <p>
+        Título<br>
+        <input type="text" ng-model="adPost.currentPost.title"><br>
+    </p>
+
+    <p>
+        Titulo Corto<br>
+        <input type="text" ng-model="adPost.currentPost.shortTitle"><br>
+    </p>
+
+    <p>
+        Tags<br>
+        //aqui irá un autocomplete//<br>
+        <input type="text" ng-model="adPost.currentPost.tags"><br>
+    </p>
+
+    <p>
+        Categoria
+        <select ng-model="adPost.currentPost.category" ng-options="cat.name for cat in adPost.categoryList"></select>
+    </p>
+
+    <br><br>
+    <div text-angular ng-model="adPost.currentPost.text"></div>
+
+</form>
+<br>
+<button ng-click="adPap.save()" ng-hide="adPap.mode=='READ'">Guardar</button>
+<button ng-click="adPap.cancel()" ng-hide="adPap.mode=='READ'">Cancelar</button>
+<button ng-click="adPap.cancel()" ng-show="adPap.mode=='READ'">Volver</button>

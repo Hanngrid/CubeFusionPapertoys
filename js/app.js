@@ -1,6 +1,6 @@
 //myApp
 
-angular.module("myApp",['ngRoute','autocomplete']);
+angular.module("myApp",['ngRoute','autocomplete','textAngular']);
 
 
 angular.module("myApp").directive('errSrc', function() {

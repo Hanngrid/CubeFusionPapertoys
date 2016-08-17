@@ -80,8 +80,13 @@
     font-size: 1.2em;
 }
 
+.form-control{
+    height: auto !important;
+}
 
-
+#textAngular-editableFix-010203040506070809{
+    display: none;
+}
 
 
 

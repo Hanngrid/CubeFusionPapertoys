@@ -10,11 +10,11 @@ angular.module("myApp").controller("adminController", function(service){
 
     me.imageRoute = me.service.routes.animeImages;
 
-    me.currentView = 'view/adminComponents/adminUsers/adminUsers.html';
+    me.currentView = 'view/adminComponents/adminPosts/adminPosts.html';
     me.changeView = function(newView){
         switch(newView){
             case 0:
-                me.currentView = 'view/adminComponents/adminPost.html';
+                me.currentView = 'view/adminComponents/adminPosts/adminPosts.html';
                 break;
             case 1:
                 me.currentView = 'view/adminComponents/adminAnimes/adminAnimes.html';
