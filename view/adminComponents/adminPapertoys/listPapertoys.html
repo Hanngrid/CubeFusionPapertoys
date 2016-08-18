@@ -56,19 +56,17 @@ Selecciona un anime:
             <td>{{paper.style}}</td>
             <td>{{paper.parts}}</td>
             <td>
-                <!-- imagen  -->
-            </td>
-            <td>
-                <!-- 3d  -->
-            </td>
+				<img width="50" src="{{adPap.imageRoute}}{{paper.animeImage}}/{{paper.image}}.jpg">
+			</td>
+            <td>{{paper.model}}</td>
             <td>
                 <!-- descarga  -->
             </td>
             <td>{{paper.order}}</td>
             <td>
-                <button class="fa fa-eye" ng-click="adAn.openReadPanel(paper)"></button>
-                <button class="fa fa-pencil" ng-click="adAn.openUpdatePanel(paper)"></button>
-                <button class="fa fa-trash-o" ng-click="adAn.deleteAnime(paper)"></button>
+                <button class="fa fa-eye" ng-click="adPap.openReadPanel(paper)"></button>
+                <button class="fa fa-pencil" ng-click="adPap.openUpdatePanel(paper)"></button>
+                <button class="fa fa-trash-o" ng-click="adPap.deleteAnime(paper)"></button>
             </td>
         </tr>
     </tbody>

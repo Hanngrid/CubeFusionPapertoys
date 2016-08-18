@@ -32,7 +32,8 @@ angular.module("myApp").controller("adminPapertoysController", function ($http, 
             model: paper.model,
             download: paper.download,
             order: paper.order,
-            animeName: paper.animeName
+            animeName: paper.animeName,
+			animeImage: paper.animeImage
         };
     };
 

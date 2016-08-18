@@ -21,7 +21,7 @@
     </p>
     <p>
         Imagen<br><input type="text" ng-model="adPap.currentPaper.image" ng-readonly="adPap.mode=='READ'"><br>
-        <img ng-show="adPap.currentPaper.image" src="{{adPap.currentPaper.image}}">
+        <img src="{{adPap.imageRoute}}{{adPap.currentPaper.animeImage}}/{{adPap.currentPaper.image}}.jpg">
         <br ng-show="adPap.currentPaper.image">
     </p>
     <p>
