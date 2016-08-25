@@ -8,6 +8,7 @@ angular.module("myApp").controller("adminPapertoysController", function ($http, 
     me.service = service;
 
     me.imageRoute = me.service.routes.paperImages;
+	me.modelRoute = me.service.routes.modelImages;
 
     me.currentView = 'view/adminComponents/adminPapertoys/listPapertoys.html';
     me.currentPaper = null;
@@ -16,7 +17,7 @@ angular.module("myApp").controller("adminPapertoysController", function ($http, 
 
     me.animeList = [];
     me.animeListComplete = [];
-    me.selectedAnime = "Naruto";
+    me.selectedAnime = "";
 
     me.paperList = [{}];
 
@@ -166,7 +167,6 @@ angular.module("myApp").controller("adminPapertoysController", function ($http, 
     };
 
     var createPapertoy = function (paper) {
-        debugger;
         var animeId = getSelectedAnimeId(me.selectedAnime);
         $http.post(
             "http://cubefusionpapertoys.com/database/papertoys/createPapertoy.php",
@@ -216,5 +216,4 @@ angular.module("myApp").controller("adminPapertoysController", function ($http, 
     };
 
     getAllAnimes();
-    getAllPapertoys(1)
 });

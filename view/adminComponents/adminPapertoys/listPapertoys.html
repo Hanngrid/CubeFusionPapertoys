@@ -58,7 +58,9 @@ Selecciona un anime:
             <td>
 				<img width="50" src="{{adPap.imageRoute}}{{paper.animeImage}}/{{paper.image}}.jpg">
 			</td>
-            <td>{{paper.model}}</td>
+            <td>
+				<img ng-show="paper.model" height="50" src="{{adPap.modelRoute}}{{paper.animeImage}}/{{paper.model}}.gif">
+			</td>
             <td>
                 <!-- descarga  -->
             </td>
